@@ -10,9 +10,9 @@ public class ValidateNumber {
         ArrayList<Integer> inputList = new ArrayList<>();
         LinkedHashSet<Integer> tmpSet = new LinkedHashSet<Integer>();
         // 3자리 숫자인지 확인
-        if(input.length()<3){
+        if(input.length()!=3){
             if(flag == false){
-                System.out.println("올바르지 않은 숫자입니다");
+                System.out.println("3자리 숫자로 입력해주세요.");
             }
             return false;
         }

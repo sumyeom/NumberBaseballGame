@@ -7,5 +7,6 @@ public class BaseballGameDisplay {
         }else{
             System.out.println(Strike + "스트라이크 " + ball + "볼");
         }
+        System.out.println("------------------------------------------------------");
     }
 }

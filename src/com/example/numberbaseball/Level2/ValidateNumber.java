@@ -9,32 +9,36 @@ public class ValidateNumber {
     protected boolean validateInput(String input, boolean flag) {
         ArrayList<Integer> inputList = new ArrayList<>();
         LinkedHashSet<Integer> tmpSet = new LinkedHashSet<Integer>();
-        // 3자리 숫자인지 확인
-        if(input.length()!=3){
-            if(flag == false){
-                System.out.println("3자리 숫자로 입력해주세요.");
-            }
-            return false;
-        }
+
         try {
             // 문자열, 0 확인
             parseOperandInteger(input);
         } catch (Exception e) {
             if(flag == false){
                 System.out.println("올바르지 않은 숫자입니다");
+                System.out.println("------------------------------------------------------");
             }
             return false;
         }
 
+        // 3자리 숫자인지 확인
+        if(input.length()!=3){
+            if(flag == false){
+                System.out.println("3자리 숫자로 입력해주세요.");
+                System.out.println("------------------------------------------------------");
+            }
+            return false;
+        }
+
+        // 중복 확인
         for (int i = 0; i < input.length(); i++) {
             inputList.add(Character.getNumericValue(input.charAt(i)));
             tmpSet.add(inputList.get(i));
         }
-
-        // 중복 확인
         if (input.length() != tmpSet.size()) {
             if(flag == false){
                 System.out.println("올바르지 않은 숫자입니다");
+                System.out.println("------------------------------------------------------");
             }
             return false;
         }

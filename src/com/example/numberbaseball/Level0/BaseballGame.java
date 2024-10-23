@@ -58,7 +58,7 @@ public class BaseballGame {
 
     private void generateAnswer() {
         Random random = new Random();
-        int firstNumber = random.nextInt(1, 999);
+        int firstNumber = random.nextInt(1, 9);
         int secondNumber;
         int thirdNumber;
 

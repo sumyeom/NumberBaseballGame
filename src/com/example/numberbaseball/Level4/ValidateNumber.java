@@ -21,7 +21,7 @@ public class ValidateNumber {
             return false;
         }
 
-        // 3자리 숫자인지 확인
+        // 입력 받은 숫자가 설정한 자리수인지 확인
         if(input.length()!=digit){
             if(flag == false){
                 System.out.println(digit+ "자리 숫자로 입력해주세요.");

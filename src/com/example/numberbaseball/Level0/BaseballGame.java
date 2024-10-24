@@ -22,6 +22,7 @@ public class BaseballGame {
         BaseballGameDisplay baseballGameDisplay = new BaseballGameDisplay();
         // 정답 생성
         generateAnswer();
+        // TODO : 정답값 보기위해 추가해놓음 - 추후에 삭제 필요
         System.out.println(answerGame.toString());
         Scanner scanner = new Scanner(System.in);
         System.out.println("<게임을 시작합니다>");

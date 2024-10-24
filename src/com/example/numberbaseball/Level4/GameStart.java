@@ -14,31 +14,38 @@ public class GameStart {
             if (finishFlag == false) {
                 break;
             }
-            System.out.println("원하시는 번호를 입력해주세요.");
+            System.out.println("[Menu] 원하시는 번호를 입력해주세요!!");
+            System.out.println("======================================================");
             System.out.println("0. 자리수 설정 | 1. 게임 시작하기 | 2. 게임 기록 보기 | 3. 종료");
             String command = scanner.nextLine();
             int digit = 3;
             switch(command){
                 case "0" :
-                    System.out.println("설정하고자 하는 자리수를 입력하세요.");
-                    String digitStr = scanner.nextLine();
-                    try{
-                        validateNumber.parseOperandInteger(digitStr);
-                    }catch (Exception e){
-                        if(digitStr.equals("0")){
-                            System.out.println("설정할 수 없는 자리수입니다.");
-                        } else{
-                            System.out.println(e.getMessage()+"로 입력하세요");
+                    String digitStr;
+                    while(true){
+                        System.out.println("설정하고자 하는 자리수를 입력하세요.(3 ~ 5 자리수)");
+                        digitStr = scanner.nextLine();
+                        try{
+                            validateNumber.parseOperandInteger(digitStr);
+                        }catch (Exception e){
+                            if(digitStr.equals("0")){
+                                System.out.println("설정할 수 없는 자리수입니다.");
+                            } else{
+                                System.out.println(e.getMessage()+"로 입력하세요");
+                            }
+                            System.out.println("------------------------------------------------------");
+                            continue;
                         }
+                        digit = Integer.parseInt(digitStr);
+                        if(3 > digit || digit > 5){
+                            System.out.println("설정할 수 없는 자리수입니다");
+                            System.out.println("------------------------------------------------------");
+                            continue;
+                        }
+                        System.out.println(digitStr +"자리수 난이도로 설정되었습니다.");
+                        System.out.println();
                         break;
                     }
-                    digit = Integer.parseInt(digitStr);
-                    if(3 > digit || digit > 5){
-                        System.out.println("설정할 수 없는 자리수입니다");
-                        break;
-                    }
-                    System.out.println(digitStr +"자리수 난이도로 설정되었습니다.");
-                    System.out.println();
                 case "1" :
                     baseballGame = new BaseballGame(digit);
                     // 게임 진행 후 정답 입력 횟수 기록

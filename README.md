@@ -31,3 +31,4 @@
 
 ---
 ##### Trouble Shooting
+1. [NumberBaseball Project](https://withsumyeom.tistory.com/entry/Trouble-Shooting-NumberBaseball-Project)

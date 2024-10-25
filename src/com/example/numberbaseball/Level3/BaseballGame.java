@@ -26,8 +26,6 @@ public class BaseballGame {
         int ball = 0;
         int countPlay = 0;
 
-        // TODO : 정답값 보기위해 추가해놓음 - 추후에 삭제 필요
-        System.out.println(answerGame.toString());
         System.out.println("<게임을 시작합니다>");
         while (true) {
             // 1. 유저에게 입력을 받음

@@ -29,8 +29,6 @@ public class BaseballGame {
         int ball = 0;
         int countPlay = 0;
 
-        // TODO : 정답값 보기위해 추가해놓음 - 추후에 삭제 필요
-        System.out.println(answerGame.toString());
         System.out.println("<게임을 시작합니다>");
         while (true) {
             // 1. 유저에게 입력을 받음
@@ -49,7 +47,7 @@ public class BaseballGame {
             // 4. 스트라이크 개수 계산
             strike = countStrike.countAnswer(answerGame, inputGame);
             // 5. 정답 여부 확인, 만약 정답이면 break를 이용해 반복문 탈출
-                if (strike == digit) {
+            if (strike == digit) {
                 System.out.println("정답입니다!");
                 System.out.println("------------------------------------------------------");
                 break;
